@@ -16,10 +16,11 @@ class VanTiltCard extends HTMLElement {
 
     const pAngle = parseFloat(hass.states[this.config.entity_pitch]?.state) ?? 'unavailable';
 
-    const offsetfactor = parseFloat(this.config.offset_factor) ?? 1;
-    const x_offset = (parseFloat(hass.states[this.config.entity_x]?.state) * offsetFactor ?? 0.0).ToString();
-    const y_offset = (parseFloat(hass.states[this.config.entity_y]?.state) * offsetFactor ?? 0.0).ToString();
-    
+    const offsetFactor = parseFloat(this.config.offset_factor) ?? 1;
+const x_offset = (parseFloat(hass.states[this.config.entity_x]?.state) * offsetFactor) || 0.0;
+const y_offset = (parseFloat(hass.states[this.config.entity_y]?.state) * offsetFactor) || 0.0;
+
+
     const pfactor = parseFloat(this.config.pitch_factor) ?? 1;
     const rfactor = parseFloat(this.config.roll_factor) ?? 1;
     
