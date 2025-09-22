@@ -29,48 +29,48 @@ class VanTiltCard extends HTMLElement {
     const pRotate = (pAngle * pfactor).toString();
     const rAngleStr = isNaN(rAngle) ? 'unavailable' : rAngle.toFixed(roundTo);
     const pAngleStr = isNaN(pAngle) ? 'unavailable' : pAngle.toFixed(roundTo);
-
     this.content.innerHTML = `
-      <row style="display: flex;">
-        <div style="flex: 40%;text-align: center;">
-          <img src="/local/images/side.png" style="max-width: 100%;height: 100px;transform:rotate(${pRotate}deg);">
+      <div style="display: flex;">
+        <div style="flex: 40%; text-align: center;">
+          <img src="/local/images/side.png" style="max-width: 100%; height: 100px; transform:rotate(${pRotate}deg);">
           <hr>
           <h1>${pAngleStr}°</h1>
         </div>
-        <div style="flex: 30%;text-align: center;">
-          <img src="/local/images/back.png" style="max-width: 100%;height: 100px;transform:rotate(${rRotate}deg);">
+        <div style="flex: 30%; text-align: center;">
+          <img src="/local/images/back.png" style="max-width: 100%; height: 100px; transform:rotate(${rRotate}deg);">
           <hr>
           <h1>${rAngleStr}°</h1>
         </div>
-        <div style="flex: 30%; text-align: center; height: 100px;">
+        <div style="flex: 30%; text-align: center; height: 100px; position: relative;">
+          <img src="/local/images/top.png" style="max-width: 100%; height: 100px;">
 
-          <img src="/local/images/top.png" style="max-width: 100%;height: 100px;">
-            <!-- big center circle -->
-            <div style="
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background: gray;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            "/>
+          <!-- big center circle -->
+          <div style="
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              background: gray;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+          "></div>
 
-            <!-- small movable circle -->
-            <div style="
-                width: 10px;
-                height: 10px;
-                border-radius: 50%;
-                background: red;
-                position: absolute;
-                top: calc(50% + ${y_offset}px);
-                left: calc(50% + ${x_offset}px);
-                transform: translate(-50%, -50%);
-            "/>
+          <!-- small movable circle -->
+          <div style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: red;
+              position: absolute;
+              top: calc(50% + ${y_offset}px);
+              left: calc(50% + ${x_offset}px);
+              transform: translate(-50%, -50%);
+          "></div>
         </div>
-      </row>
+      </div>
     `;
+
   }
 
   // The user supplied configuration. Throw an exception and Lovelace will
