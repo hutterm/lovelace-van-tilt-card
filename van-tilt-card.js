@@ -42,7 +42,7 @@ class VanTiltCard extends HTMLElement {
           <hr>
           <h1>${rAngleStr}°</h1>
         </div>
-        <div style="flex: 30%; text-align: center; position: relative; height: 100px;">
+        <div style="flex: 30%; text-align: center; height: 100px;">
 
           <img src="/local/images/top.png" style="max-width: 100%;height: 100px;">
             <!-- big center circle -->
